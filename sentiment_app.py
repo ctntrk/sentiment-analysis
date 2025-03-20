@@ -17,39 +17,39 @@ EMOJI_MAP = {
     "NEUTRAL": "😐"
 }
 
-st.set_page_config(page_title="Duygu Analizi", layout="wide")
-st.title("🎨 Dinamik Renkli Duygu Analizi")
+st.set_page_config(page_title="Sentiment Analysis", layout="wide")
+st.title("🎨 Dynamic Colorful Sentiment Analysis")
 
-# Yan panel
+# Sidebar
 with st.sidebar:
-    st.header("⚙️ Ayarlar")
+    st.header("⚙️ Settings")
     st.markdown("""
-    **Kullanılan Model:**  
+    **Used Model:**  
     `cardiffnlp/twitter-roberta-base-sentiment`  
-    (3 sınıflı Twitter duygu analiz modeli)
+    (3-class Twitter sentiment analysis model)
     
-    **Renk Kodlaması:**
-    - 🟢 Pozitif: #90EE90 (Açık Yeşil)
-    - 🔴 Negatif: #FF6B6B (Açık Kırmızı)
-    - 🟡 Nötr: #FFD93D (Açık Sarı)
+    **Color Coding:**
+    - 🟢 Positive: #90EE90 (Light Green)
+    - 🔴 Negative: #FF6B6B (Light Red)
+    - 🟡 Neutral: #FFD93D (Light Yellow)
     """)
     
-    st.header("ℹ️ Bilgi Paneli")
+    st.header("ℹ️ Information Panel")
     st.markdown("""
-    **Uygulama Özellikleri:**
-    - Metin girişine göre gerçek zamanlı duygu analizi
-    - Duyguya özel dinamik arka plan rengi
-    - Duygu etiketi ve güven skoru görüntüleme
-    - Renk geçiş animasyonu
+    **Application Features:**
+    - Real-time sentiment analysis based on text input
+    - Emotion-specific dynamic background color
+    - Sentiment label and confidence score display
+    - Color transition animation
     """)
 
-user_input = st.text_input("Metni girin:", "")
+user_input = st.text_input("Enter text:", "")
 
 if user_input:
     classifier = load_model()
     result = classifier(user_input)[0]
     
-    # Etiket dönüşümü
+    # Label conversion
     label_num = int(result['label'].split("_")[-1])
     label = ["NEGATIVE", "NEUTRAL", "POSITIVE"][label_num]
     
@@ -71,51 +71,51 @@ if user_input:
     
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader(f"{EMOJI_MAP[label]} Sonuç: {label}")
+        st.subheader(f"{EMOJI_MAP[label]} Result: {label}")
     with col2:
-        st.metric("Güven Skoru", f"{result['score']:.2%}")
+        st.metric("Confidence Score", f"{result['score']:.2%}")
 
 else:
-    st.info("Lütfen bir metin giriniz")
+    st.info("Please enter some text")
 
 def show_help_section():
-    st.sidebar.subheader("📖 Yardım ve Bilgiler")
+    st.sidebar.subheader("📖 Help & Information")
     
-    # Temel yardım bilgileri
+    # Basic help information
     st.sidebar.markdown("""
-    **Güven Skoru:**  
-    Modelin tahminine olan güveni 0-1 arasında (yüksek = daha emin)
+    **Confidence Score:**  
+    Model's confidence in prediction (0-1 range, higher = more confident)
     
-    **Hızlı Kılavuz:**  
-    - 😊 Pozitif Duygu  
-    - 😠 Negatif Duygu  
-    - 😐 Nötr Duygu  
-    - Renkler duyguya göre otomatik değişir
+    **Quick Guide:**  
+    - 😊 Positive Sentiment  
+    - 😠 Negative Sentiment  
+    - 😐 Neutral Sentiment  
+    - Colors change automatically based on sentiment
     """)
     
-    # Detaylı bilgiler için expander
-    with st.sidebar.expander("📊 Detaylı Teknik Bilgiler"):
+    # Detailed information expander
+    with st.sidebar.expander("📊 Detailed Technical Information"):
         st.markdown("""
-        **Güven Skoru (Confidence Score)**
-        - **Hesaplama Yöntemi:** Model çıktılarından direkt alınır (`result['score']`)
-        - **Yorumlama:**  
-          0.0-0.4 → Düşük güven  
-          0.4-0.6 → Orta güven  
-          0.6-1.0 → Yüksek güven
+        **Confidence Score**
+        - **Calculation Method:** Directly taken from model outputs (`result['score']`)
+        - **Interpretation:**  
+          0.0-0.4 → Low confidence  
+          0.4-0.6 → Medium confidence  
+          0.6-1.0 → High confidence
 
-        **Renk Kodları**  
-        | Duygu   | HEX Kodu   | Örnek      |
-        |---------|------------|------------|
-        | Pozitif | `#90EE90`  | 🟩 Açık Yeşil |
-        | Negatif | `#FF6B6B`  | 🟥 Açık Kırmızı |
-        | Nötr    | `#FFD93D`  | 🟨 Açık Sarı |
+        **Color Codes**  
+        | Sentiment | HEX Code    | Example     |
+        |-----------|-------------|-------------|
+        | Positive  | `#90EE90`   | 🟩 Light Green |
+        | Negative  | `#FF6B6B`   | 🟥 Light Red |
+        | Neutral   | `#FFD93D`   | 🟨 Light Yellow |
 
-        **Emoji Sembolojisi**  
-        - 😊 → Olumlu kelimeler/ifadeler  
-        - 😠 → Küçümseme veya öfke içeren ifadeler  
-        - 😐 → Duygu yüklü olmayan nötr içerik
+        **Emoji Symbolism**  
+        - 😊 → Positive words/expressions  
+        - 😠 → Derogatory or angry expressions  
+        - 😐 → Emotionally neutral content
         """)
 
-# Yan panele eklemek için
+# Add to sidebar
 with st.sidebar:
     show_help_section()
