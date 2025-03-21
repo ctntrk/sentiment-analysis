@@ -9,12 +9,18 @@ You can try out the application and see it in action by visiting the link below:
 [**Sentiment Analysis Demo**](https://dynamic-color-sentiment-analysis.streamlit.app)
 
 ---
+## How It Works
+
+## Streamlit Web Apps
 ![Alt text](https://github.com/ctntrk/sentiment-analysis/blob/main/recording-2025-03-20-13-53-13-0.jpg)
 
+## Entering text with positive sentiment
 ![Alt text](https://github.com/ctntrk/sentiment-analysis/blob/main/recording-2025-03-20-13-53-13-1.jpg)
+## Entering text with negative sentiment
 
 ![Alt text](https://github.com/ctntrk/sentiment-analysis/blob/main/recording-2025-03-20-13-53-13-2.jpg)
 
+## Entering text with neutral sentiment
 ![Alt text](https://github.com/ctntrk/sentiment-analysis/blob/main/recording-2025-03-20-13-53-13-3.jpg)
 
 ---
