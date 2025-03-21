@@ -13,6 +13,9 @@ You can try out the application and see it in action by visiting the link below:
 
 [**Sentiment Analysis Demo**](https://dynamic-color-sentiment-analysis.streamlit.app)
 
+⚠️ Note: Streamlit Cloud deploy may put the app to sleep if it’s not being actively used or if there’s low traffic. 💤
+
+
 ---
 ## 📌 Project Overview
 
