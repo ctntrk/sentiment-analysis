@@ -2,6 +2,8 @@
 
 This application uses **Streamlit** and the **Hugging Face Transformers** library to perform sentiment analysis on text input. The app analyzes the sentiment of the given text, displays the result, and dynamically changes the background color based on the sentiment detected.
 
+## Sentiment Analysis Demo Introduction Video
+
 https://github.com/user-attachments/assets/3ad01d97-bf20-46d6-b5ef-0b8ae66b3cf6
 
 
@@ -10,6 +12,17 @@ https://github.com/user-attachments/assets/3ad01d97-bf20-46d6-b5ef-0b8ae66b3cf6
 You can try out the application and see it in action by visiting the link below:
 
 [**Sentiment Analysis Demo**](https://dynamic-color-sentiment-analysis.streamlit.app)
+
+---
+## 📌 Project Overview
+
+This project is a **web application** that allows users to input text and analyze its **sentiment**. The application displays the result with a corresponding **emoji**, **sentiment label** (Positive, Negative, Neutral), and a **confidence score**. Additionally, the background color changes dynamically based on the sentiment.
+
+### Features:
+- Real-time sentiment analysis
+- Emotion-specific dynamic background color
+- Display of sentiment label and confidence score
+- Color transition animation
 
 ---
 ## How It Works
@@ -25,18 +38,6 @@ You can try out the application and see it in action by visiting the link below:
 
 ## Entering text with neutral sentiment
 ![Alt text](https://github.com/ctntrk/sentiment-analysis/blob/main/recording-2025-03-20-13-53-13-3.jpg)
-
----
-
-## 📌 Project Overview
-
-This project is a **web application** that allows users to input text and analyze its **sentiment**. The application displays the result with a corresponding **emoji**, **sentiment label** (Positive, Negative, Neutral), and a **confidence score**. Additionally, the background color changes dynamically based on the sentiment.
-
-### Features:
-- Real-time sentiment analysis
-- Emotion-specific dynamic background color
-- Display of sentiment label and confidence score
-- Color transition animation
 
 ---
 
