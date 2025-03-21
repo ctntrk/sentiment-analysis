@@ -2,6 +2,7 @@
 
 This application uses **Streamlit** and the **Hugging Face Transformers** library to perform sentiment analysis on text input. The app analyzes the sentiment of the given text, displays the result, and dynamically changes the background color based on the sentiment detected.
 
+https://github.com/user-attachments/assets/3ad01d97-bf20-46d6-b5ef-0b8ae66b3cf6
 
 
 ## 🌐 Demo
